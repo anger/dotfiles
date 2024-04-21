@@ -1,0 +1,48 @@
+# starts server on 1st arg
+server() {
+if [[ $2 ]];then
+    python3 -m http.server $1 --directory $2
+else
+    python3 -m http.server $1
+fi
+}
+
+# start listener 
+lst() {
+
+if [[ $1 ]]; then
+    bash --login -c "nc -lvnp $1"
+else
+    bash --login -c "nc -lvnp 9090"
+fi
+}
+
+# automated listener
+shelllst() {
+
+if [[ $1 ]]; then
+    port=$1
+else
+    port=9090
+fi
+
+stty raw -echo; (echo 'python3 -c "import pty;pty.spawn(\"/bin/bash\")" || python -c "import pty;pty.spawn(\"/bin/bash\")"' ;echo "stty$(stty -a | awk -F ';' '{print $2 $3}' | head -n 1)"; echo reset;cat) | nc -lvnp $port && reset
+
+}
+
+# Url encode a string - echo asd==|urlencode
+
+urlencode() {
+python3 -c "import sys; from urllib.parse import quote; print(quote(sys.stdin.read().strip()));"
+}
+
+# URL decode a string - echo 123%3D%3D|urldecode
+urldecode() {
+python3 -c "import sys; from urllib.parse import unquote; print(unquote(sys.stdin.read().strip()));"
+}
+
+# Get the MD5 hash of a string - echo anger|md5
+
+md5() {
+python3 -c 'import hashlib,sys; print(hashlib.md5(sys.stdin.read().encode()).hexdigest())'
+}
