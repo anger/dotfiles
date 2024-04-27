@@ -32,6 +32,7 @@ HISTSIZE=5000
 SAVEHIST=5000
 ZLE_RPROMPT_INDENT=0
 
+CTF_ROOT='/home/anger/Workspace/CTF'
 
 alias vim='nvim'
 export STARSHIP_CONFIG=~/.config/starship.toml
