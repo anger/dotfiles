@@ -1,31 +1,34 @@
 # basic stuff
-alias zsh='source ~/.zshrc'
+alias sourcez='source ~/.zshrc'
 alias bat='bat --paging=never'
 alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 alias fzfs=$'rg . | fzf --print0 -e | awk -F: \'{print $1}\''
 alias neo='neofetch'
 alias ll='ls -alhF'
+alias sl='ls'
 alias open='xdg-open'
-
 
 # ctf aliases
 alias gef='gdb -q --eval-command=init-gef'
-alias lslibs='ls ~/Workspace/CTF/Tools/Pwn/libcdb/libs/'
-alias libcfind='~/Workspace/CTF/Tools/Pwn/libcdb/find'
-alias libcid='~/Workspace/CTF/Tools/Pwn/libcdb/identify'
 alias ex='chmod +x '
 alias p='ipython'
 alias pwninit='pwninit --template-path ~/.config/pwn-template.py'
-alias scripts='code /home/anger/Workspace/CTF/ctf-scripts'
+alias scripts='code /home/anger/Tools/ctf-scripts'
+
+# ssh into pwn.college challenge
+alias sshpwn='ssh hacker@dojo.pwn.college'
+
 
 # dir transverse
 alias tools='cd ~/Workspace/tools'
 alias play='cd ~/Workspace/Playground/'
 alias ctf='cd ~/Workspace/CTF'
-alias dev='cd ~/Workspace/Dev'
+alias dev='cd ~/Workspace/Development/'
 alias vr='cd ~/Workspace/VR'
 alias work='cd ~/Workspace/'
+alias wo='cd ~/Workspace/'
 
 #copies the piped input onto the clipboard                                                                          
 alias copy='xclip -selection c'
 alias paste='xclip -selection clipboard -o'
+

@@ -1,3 +1,4 @@
+# i really need to clean this all up soon
 export ZSH="$HOME/.oh-my-zsh"
 
 
@@ -12,6 +13,8 @@ fi
 if [[ -f ~/.config/.shortcutrc ]]; then
  source ~/.config/.shortcutrc
 fi
+
+PATH=$PATH:/home/anger/.local/bin                                                                                                                          
 
 # color man pages
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -32,10 +35,11 @@ SAVEHIST=5000
 ZLE_RPROMPT_INDENT=0
 
 CTF_ROOT='/home/anger/Workspace/CTF'
-
 alias vim='nvim'
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$fg[yellow]%}$%{$reset_color%}%b "
 export EDITOR="nvim"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+## Colored prompt
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$fg[yellow]%}$%{$reset_color%}%b "
