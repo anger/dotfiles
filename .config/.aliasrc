@@ -7,6 +7,7 @@ alias neo='neofetch'
 alias ll='ls -alhF'
 alias sl='ls'
 alias open='xdg-open'
+alias dgpu="export __GLX_VENDOR_LIBRARY_NAME=nvidia && export __NV_PRIME_RENDER_OFFLOAD=1 &&"
 
 # ctf aliases
 alias gef='gdb -q --eval-command=init-gef'
@@ -14,13 +15,14 @@ alias ex='chmod +x '
 alias p='ipython'
 alias pwninit='pwninit --template-path ~/.config/pwn-template.py'
 alias scripts='code /home/anger/Tools/ctf-scripts'
+alias ghidra='~/Tools/ghidra_PUBLIC/ghidraRun'
 
 # ssh into pwn.college challenge
 alias sshpwn='ssh hacker@dojo.pwn.college'
 
 
 # dir transverse
-alias tools='cd ~/Workspace/tools'
+alias tools='cd ~/Tools/'
 alias play='cd ~/Workspace/Playground/'
 alias ctf='cd ~/Workspace/CTF'
 alias dev='cd ~/Workspace/Development/'
