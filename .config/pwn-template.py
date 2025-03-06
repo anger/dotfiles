@@ -4,27 +4,27 @@ from pwn import *
 
 {bindings}
 
-context.binary = {bin_name}
-context.log_level = "DEBUG"
-context.terminal = ["tmux", "split-window", "-h"]
-r = ROP({bin_name})
+elf = ({bin_name})
 
-gs = '''
-'''
+context.terminal = ["tmux", "split-window", "-h"]
+context.log_level = "DEBUG"
+context.binary = elf
+
+gdb_cmds = ["c"]
 
 def conn():
     if args.GDB:
-        return gdb.debug({proc_args}, gdbscript=gs)
+        p = elf.debug(gdbscript="\n".join(gdb_cmds))
     elif args.REMOTE:
-        return remote('addr',1337)
+        p = remote("addr", 1337)
     else:
-        return process({proc_args})
-
+        p = elf.process()
+    return p
 
 def main():
     p = conn()
 
-
+    # good luck pwning :)
 
     p.interactive()
 
