@@ -13,7 +13,7 @@ alias dgpu="export __GLX_VENDOR_LIBRARY_NAME=nvidia && export __NV_PRIME_RENDER_
 alias gef='gdb -q --eval-command=init-gef'
 alias ex='chmod +x '
 alias p='ipython'
-alias pwninit='pwninit --template-path ~/.config/pwn-template.py'
+alias pwninit='pwninit --template-path ~/.config/pwn-template.py --template-bin-name e'
 alias scripts='code /home/anger/Tools/ctf-scripts'
 alias ghidra='~/Tools/ghidra_PUBLIC/ghidraRun'
 
