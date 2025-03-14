@@ -12,6 +12,9 @@ context.binary = elf
 
 gdb_cmds = ["c"]
 
+def sla(x : bytes | str, y : bytes | str): p.sendlineafter(x, y)
+def rl() -> bytes: return p.recvline()
+
 def conn():
     if args.GDB:
         p = elf.debug(gdbscript="\n".join(gdb_cmds))
@@ -24,7 +27,7 @@ def conn():
 def main():
     p = conn()
 
-    # good luck pwning :)
+    # good luck buddy
 
     p.interactive()
 
